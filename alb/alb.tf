@@ -16,7 +16,7 @@ resource "aws_alb" "cfcorp_alb" {
 
 resource "aws_lb_target_group" "cfcorp_tg" {
   name     = "${var.application_prefix}-tg-${var.application_environment}-${var.application_deployment}"
-  port     = "80"                                                                                        # Required but doesn't really matter
+  port     = "80" # Required but doesn't really matter
   protocol = "${var.tg_protocol}"
   vpc_id   = "${var.tg_vpc_id}"
 
