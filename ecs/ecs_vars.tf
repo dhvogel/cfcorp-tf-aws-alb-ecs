@@ -64,8 +64,8 @@ variable "asg_security_group_ids" {
   type        = "list"
 }
 
-variable "asg_user_data" {
-  description = "User data to run when launching a new instance"
+variable "asg_template_file" {
+  description = "Location of template file to be rendered into user data"
   type        = "string"
 }
 

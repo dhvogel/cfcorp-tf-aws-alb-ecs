@@ -32,9 +32,9 @@ get:
 init:
 	$(TERRAFORM) init \
 	   -backend=true \
-           -backend-config="bucket=cfcorp-prod-remotestate" \
-	   -backend-config="key=/alb-ecs/ecs/terraform.tfstate"
-	   -backend-config="region=us-east-1"
+     -backend-config="bucket=cfcorp-prod-remotestate" \
+	   -backend-config="key=/alb-ecs/ecs/terraform.tfstate" \
+	   -backend-config="region=us-east-1" \
 	   -backend-config="encrypt=true"
 
 output:
