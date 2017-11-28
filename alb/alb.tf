@@ -16,7 +16,7 @@ resource "aws_alb" "cfcorp_alb" {
 
 resource "aws_lb_target_group" "cfcorp_tg" {
   name     = "${var.application_prefix}-tg-${var.application_environment}-${var.application_deployment}"
-  port     = "80" # Required but doesn't really matter
+  port     = "80"                                                                                        # Required but doesn't really matter
   protocol = "${var.tg_protocol}"
   vpc_id   = "${var.tg_vpc_id}"
 
@@ -33,8 +33,6 @@ resource "aws_lb_listener" "cfcorp_listener" {
   load_balancer_arn = "${aws_alb.cfcorp_alb.id}"
   port              = "${var.listener_port}"
   protocol          = "${var.listener_protocol}"
-  ssl_policy        = "${var.ssl_policy}"
-  certificate_arn   = "${var.listener_certificate_arn}"
 
   default_action {
     target_group_arn = "${aws_lb_target_group.cfcorp_tg.arn}"
